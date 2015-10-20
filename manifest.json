@@ -1,0 +1,16 @@
+{
+	"manifest_version": 2,
+	"name": "LGTM",
+	"version": "1.0",
+	"description": "Shows a LGTM button on pull requests in Github.",
+	"permissions": [
+		"tabs",
+		"https://code.jquery.com/jquery-2.1.1.min.js"
+	],
+	"content_scripts": [{
+		"matches": ["https://github.com/*pull*"],
+		"js": ["jquery-2.1.1.min.js", "contentScript.js"],
+		"css": ["style.css"],
+		"run_at": "document_end"
+	}]
+}
